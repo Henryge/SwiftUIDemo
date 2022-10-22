@@ -25,7 +25,8 @@ struct BMIDemo: View {
             Button(action:{
                 let weight = Double(self.weightText)!
                 let height = Double(self.heightText)!
-                self.bmi = weight/(height * height)
+//                self.bmi = weight/(height * height)
+                self.bmi = weight + height
                 
                 if self.bmi < 18.5 {
                     self.classification = "Underweight"
@@ -42,7 +43,43 @@ struct BMIDemo: View {
                     .foregroundColor(.white)
                     .background(Color.blue)
             }
-            Text("BMI: \(self.bmi, specifier: "%.1f"), \(self.classification) ") .font(.title) .padding()
+//            Text("BMI: \(self.bmi, specifier: "%.0f"), \(self.classification) ") .font(.title) .padding()
+        }.padding()
+        VStack{
+            Button(action: {
+                print("hello world")
+            }){
+                Text("A")
+                    .padding()
+                    .foregroundColor(.white).background(Color.blue)
+
+            }
+            HStack{
+                Button(action: {
+                    print("hello world")
+                }){
+                    Text("B")
+                        .padding()
+                        .foregroundColor(.white).background(Color.blue)
+
+                }
+                Button(action: {
+                    print("hello world")
+                }){
+                    Text("C")
+                        .padding()
+                        .foregroundColor(.white).background(Color.blue)
+
+                }
+            }
+            Button(action: {
+                print("hello world")
+            }){
+                Text("D")
+                    .padding()
+                    .foregroundColor(.white).background(Color.blue)
+
+            }
         }.padding()
     }
 }
